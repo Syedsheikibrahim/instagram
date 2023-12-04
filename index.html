@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instagram</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:sans-serif;
+}
+/*header*/
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 18%;
+    border-bottom:1px solid grey;
+    background-color:white;
+    position:sticky;
+    top:0;
+}
+header .logo{
+    height:29px;
+}
+header .logo  img{
+    height:100%;
+    object-fit:contain;
+}
+header .search{
+    width:250px;
+    background-color:beige;
+    padding:3px 16px;
+    display:flex;
+    align-items: center;
+    border-radius:9px;
+}
+header .search input{
+    height:30px;
+    border:none;
+    outline:none;
+    background-color:beige;
+    padding-left:10px;
+    color:grey;
+}
+header nav ul{
+    list-style:none;
+    display:flex;
+}
+header nav ul li{
+    margin-right:20px;
+}
+header nav ul li:last-child{
+    margin-right:0;
+}
+header nav ul li a img{
+    width:22px;
+    height:22px;
+    border-radius:50px;
+    object-fit: cover;
+}
+header nav ul li  i{
+    color:rgba(38,38,38,1);
+    font-size:22px;
+}
+/*section*/
+section{
+    padding:30px 18%;
+    background-color:#fafafa;
+    display:flex;
+}
+.left-side{
+    width:65%;
+}
+.story{
+    display:flex;
+    padding:16px;
+    background-color:white;
+    border:1px solid rgba(219,219,219,1);
+    border-radius:3px;
+}
+.story .stories{
+    width:17%;
+}
+.story .stories a img{
+    border-radius:50%;
+    border:2px solid rgb(250, 5, 46);
+    padding:1px;
+    object-fit:cover;
+}
+.story .stories p{
+    width:90%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    color: #262626;
+}
+/*posts*/
+.post{
+    margin:25px 0;
+    background-color:white;
+    border:1px solid rgba(219,219,219,1);
+    border-radius:3px;
+}
+.post .post-tittle{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px;
+}
+.post .post-tittle .post-left{
+    display:flex;
+    align-items: center;   
+}
+.post .post-tittle .post-left .image img{
+    border-radius:50px;
+    object-fit:contain;
+}
+.post .post-tittle .post-left .detail .name{
+    padding-bottom:2px;
+    font-weight: bold;
+
+}
+.post .post-tittle .post-left .image{
+    margin-right:15px;
+}
+.post .post-content img{
+    width:100%;
+    height:100%;
+    object-fit:cover
+}
+.post .post-footer{
+    display:flex;
+    justify-content:space-between;
+    padding:16px;
+}
+.post .post-footer .like-share-comment i{
+    font-size:22px;
+    margin-right:10px;
+}
+.post .post-footer .save{
+    font-size:22px;
+}
+.post .post-footer-content{
+    padding:0 16px 16px 16px;
+}
+.post .post-footer-content p{
+    margin-bottom:3px;
+}
+.post .post-footer-content .likes{
+    margin-bottom:8px;
+}
+.post .post-footer-content .name{
+    font-weight:600;
+}
+.post .post-footer-content .posting-time{
+    font-size:10px;
+    margin-top:6px;
+}
+.post .add-comment{
+    padding:16px;
+    border-top:1px solid #efefef;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+.post .add-comment .left-side{
+    display:flex;
+    align-items: center;
+}
+.post .add-comment .left-side i{
+    font-size:22px;
+    margin-right:15px;
+}
+.post .add-comment .left-side input{
+    width:100%;
+    outline:none;
+    border:none;
+    font-size:14px;
+}
+.profile-left .image img{
+    border-radius:50px;
+    margin-right:15px;
+}
+.right-side{
+    width:35%;
+    margin-top:15px;
+    position:fixed;
+    right:30px;
+}
+.right-side .profile-tittle{
+    display:flex;
+    align-items: center;
+}
+.right-side .profile-tittle .profile-left{
+display:flex;
+align-items: center;
+margin-right:40px;
+}
+.right-side .profile-tittle .profile-left .detail .name{
+    padding-bottom:3px;
+}
+.suggesion{
+    display:flex;
+    margin-top:15px;
+    margin-bottom:20px;
+}
+.suggesion p{
+    margin-right:110px;
+}
+.suggesion-tittle{
+    display:flex;
+    align-items: center;
+    margin-bottom:15px;
+}
+.suggesion-tittle .suggesion-left{
+    display:flex;
+    align-items: center;
+    margin-right:60px;
+}
+.suggesion-tittle .suggesion-left .image img{
+    border-radius:50%;
+    margin-right:15px;
+    object-fit:cover;
+}
+.suggesion-tittle .suggesion-left .detail .name{
+    padding-bottom:3px;
+}
+    </style>
+</head>
+<body>
+  <div class="insta">
+    <header>
+        <div class="logo">
+      <img src="ins.png" width="100">    
+        </div>
+        <div class="search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input type="search" placeholder="search">
+        </div>
+       <nav>
+        <ul>
+            <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fab fa-facebook-messenger" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="far fa-plus-square"></i></a></li>
+            <li><a href="#"><i class="fa fa-compass" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+            <li><a href=""><img src="profile.jpg"></a></li>
+        </ul>
+       </nav>
+    </header>
+   <section>
+    <div class="left-side">
+      <div class="story">
+        <div class="stories">
+          <a href="#"><img src="story2 (1).jpg" width="60" height="60"></a>
+          <p>smart_killer_syed</p>
+        </div>
+        <div class="stories">
+          <a href="#"><img src="story2 (2).jpg" width="60" height="60"></a>
+          <p>smart_king_s_s_i</p>
+        </div>
+        <div class="stories">
+          <a href="#"><img src="profile.jpg" width="60" height="60"></a>
+          <p>smart_killer_</p>
+        </div>
+      </div>
+     
+      <div class="post">
+        <div class="post-tittle">
+          <div class="post-left">
+            <div class="image">
+              <img src="profile.jpg" width="32" height="32">
+            </div>
+            <div class="detail">
+              <p class="name">smart_king_s_s_i</p>
+              <p class="location">pudukottai</p>
+            </div>
+          </div>
+          <div class="post-right">
+            <i class="fas fa-ellipsis-h"></i>
+          </div>
+        </div>
+        <div class="post-content">
+          <img src="post.JPG" width="500" height="600">
+        </div>
+        <div class="post-footer">
+          <div class="like-share-comment">
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <i class="fa fa-comment" aria-hidden="true"></i>
+            <i class="fas fa-paper-plane"></i>
+          </div>
+          <div class="save">
+            <i class="fas fa-bookmark"></i>
+          </div>
+        </div>
+        <div class="post-footer-content">
+          <p class="likes">100 likes</p>
+          <p class="name">smart_killer_syed</p>
+          <p class="comment">views all 10 comments</p>
+          <p class="posting-time">23 HOURS AGO</p>
+        </div>
+
+        <div class="add-comment">
+          <div class="left-side">
+            <i class="far fa-smile-beam"></i>
+            <input type="text" placeholder="Add a comment..">
+          </div>
+          <div class="right-side">
+           <p>post</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="post">
+        <div class="post-tittle">
+          <div class="post-left">
+            <div class="image">
+              <img src="story2 (1).jpg" width="32" height="32">
+            </div>
+            <div class="detail">
+              <p class="name">smart_killer_syed</p>
+              <p class="location">mk patti</p>
+            </div>
+          </div>
+          <div class="post-right">
+            <i class="fas fa-ellipsis-h"></i>
+          </div>
+        </div>
+        <div class="post-content">
+          <img src="profile.jpg" width="500" height="500">
+        </div>
+        <div class="post-footer">
+          <div class="like-share-comment">
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <i class="fa fa-comment" aria-hidden="true"></i>
+            <i class="fas fa-paper-plane"></i>
+          </div>
+          <div class="save">
+            <i class="fas fa-bookmark"></i>
+          </div>
+        </div>
+        <div class="post-footer-content">
+          <p class="likes">100 likes</p>
+          <p class="name">smart_killer_syed</p>
+          <p class="comment">views all 10 comments</p>
+          <p class="posting-time">23 HOURS AGO</p>
+        </div>
+
+        <div class="add-comment">
+          <div class="left-side">
+            <i class="far fa-smile-beam"></i>
+            <input type="text" placeholder="Add a comment..">
+          </div>
+          <div class="right-side">
+           <p>post</p>
+          </div>
+        </div>
+      </div>
+    </div>
+   <div class="right-side">
+    <div class="profile-tittle">
+      <div class="profile-left">
+        <div class="image">
+          <img src="profile.jpg" width="56" height="56">
+        </div>
+        <div class="detail">
+          <p class="name">smart_killer_syed</p>
+          <p class="username">syed</p>
+        </div>
+      </div>
+      <div class="profile-right">
+        <p>Switch</p>
+      </div>
+    </div>
+
+
+
+    <div class="suggesion">
+      <p>suggesionforyou</p>
+      <p>SeeAll</p>
+    </div>
+    <div class="suggesion-tittle">
+      <div class="suggesion-left">
+        <div class="image">
+          <img src="story2 (1).jpg" width="36" height="36">
+        </div>
+        <div class="detail">
+          <p class="name">smart_king_s_s_i</p>
+          <p class="location">pudukottai</p>
+        </div>
+      </div>
+      <div class="suggesion-right">
+        <p>Follow</p>
+      </div>
+    </div>
+   </div>
+   </section>
+  </div>  
+</body>
+</html>
